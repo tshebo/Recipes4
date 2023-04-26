@@ -6,7 +6,7 @@
     {
        while(loop)
         {
-            Menu();
+           validateChoice(Menu());
         } 
     }
 
@@ -17,17 +17,17 @@
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("=============================Welcome to the recipe app choose between the provided options==============================");
         Console.ForegroundColor = ConsoleColor.White;
-        Console.WriteLine("\nWhat would you like to do?");
-        Console.WriteLine("1. Add ingredients");
-        Console.WriteLine("2. Add steps");
-        Console.WriteLine("3. Display recipe ");
-        Console.WriteLine("4. Scaling Options ");
-        Console.WriteLine("5. Clear Data ");
+        Console.WriteLine("\nInput the number of the function you want to perform");
+        Console.WriteLine("(1)Add ingredients");
+        Console.WriteLine("(2)Add steps");
+        Console.WriteLine("(3)Display recipe ");
+        Console.WriteLine("(4)Scaling Options ");
+        Console.WriteLine("(5)Clear Data ");
         Console.WriteLine("Any key to Exit");
 
         Console.ForegroundColor = ConsoleColor.Blue;
         choice =Console.ReadLine();
-        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.White;
         return choice;
     }
 
@@ -56,7 +56,14 @@
         else  
         {
             Console.WriteLine("===== Exit App =====");
+            exitApp();
         }
+    }
+    static void exitApp()
+    {
+        Console.WriteLine("Exiting the recipe app.");
+        loop = false;
+        Environment.Exit(0);
     }
 
     
